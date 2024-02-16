@@ -133,13 +133,16 @@
     
         
         <!-- SCORE STARTS -->
-        <section class="score flex justify-center min-h-screen items-center hidden">
+        <section id="score" class="flex justify-center min-h-screen items-center hidden">
             <div class="md:px-12 lg:px-12 py-11 rounded-2xl border-[#FFFFFF33] text-center bg-[#FFFFFF50] ">
+                <h1 class="font-anton font-bold text-5xl text-[red]">
+                    GAME OVER!
+                </h1>
                 <h1 class="text-[64px] flex items-center gap-4 mb-4">
                     <span class="font-extrabold text-white">Score: </span>
-                    <span class="text-white"> 14</span>
+                    <span id="game-score">14</span>
                 </h1>
-                <button class="font-poppins font-semibold text-2xl py-[22px] px-[32px] bg-white text-[#010313] rounded-lg mb-4">Play Now</button>
+                <button onclick="play()" class="font-poppins font-semibold text-2xl py-[22px] px-[32px] bg-white text-[#010313] rounded-lg mb-4">Play Again</button>
                 <p class="text-[20px] font-medium text-white">Practice will make you Pro</p>
             </div>
         </section>

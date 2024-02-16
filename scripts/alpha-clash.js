@@ -23,12 +23,15 @@ function handleKeyboardKeyUpEvent(event){
         console.log('You won a point');
         
         //update score
-        const currentScoreElement=document.getElementById('current-score');
-        const currentScoreText=currentScoreElement.innerText;
-        const currentScore= parseInt(currentScoreText);
+        // const currentScoreElement=document.getElementById('current-score');
+        // const currentScoreText=currentScoreElement.innerText;
+        // const currentScore= parseInt(currentScoreText);
 
+        // const newScore= currentScore+1;
+        // currentScoreElement.innerText=newScore;
+        const currentScore= getTextElementValueById('current-score');
         const newScore= currentScore+1;
-        currentScoreElement.innerText=newScore;
+        setTextElementValueById('current-score',newScore);
 
         // start new round
         removeBackgroundColorById(expectedAlphabet);
@@ -36,12 +39,19 @@ function handleKeyboardKeyUpEvent(event){
     }else{
         console.log('You lost a life');
 
-        update life
-        const currentLifeElement=document.getElementById('current-life');
-        const currentLifeText=currentLifeElement.innerText;
-        const currentLife=parseInt(currentLifeText);
+        // update life
+        // const currentLifeElement=document.getElementById('current-life');
+        // const currentLifeText=currentLifeElement.innerText;
+        // const currentLife=parseInt(currentLifeText);
+        // const newLife=currentLife-1;
+        // currentLifeElement.innerText=newLife;
+        const currentLife=getTextElementValueById('current-life');
         const newLife=currentLife-1;
-        currentLifeElement.innerText=newLife;
+        setTextElementValueById('current-life',newLife);
+
+        if(newLife === 0){
+            gameOver();
+        }
     }
 }
 
@@ -60,8 +70,26 @@ function continueGame(){
 }
 
 function play(){
+    //hide all section except playground
     hideElementsById('home');
+    hideElementsById('score')
     showElementById('play');
+    
+    // reset score and life
+    setTextElementValueById('current-score',0);
+    setTextElementValueById('current-life',5);
+    
     continueGame();
+
 }
 
+function gameOver(){
+    hideElementsById('play');
+    showElementById('score');
+
+    //update final score
+    const lastScore= getTextElementValueById('current-score');
+    setTextElementValueById('game-score',lastScore);
+    
+    //clear the ;ast selected alphabet
+}
