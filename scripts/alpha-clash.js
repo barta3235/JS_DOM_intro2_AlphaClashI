@@ -36,8 +36,12 @@ function handleKeyboardKeyUpEvent(event){
     }else{
         console.log('You lost a life');
 
-        // update life
-        
+        update life
+        const currentLifeElement=document.getElementById('current-life');
+        const currentLifeText=currentLifeElement.innerText;
+        const currentLife=parseInt(currentLifeText);
+        const newLife=currentLife-1;
+        currentLifeElement.innerText=newLife;
     }
 }
 
