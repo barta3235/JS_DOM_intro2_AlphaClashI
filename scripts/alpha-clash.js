@@ -13,6 +13,10 @@
 function handleKeyboardKeyUpEvent(event){
     const playerPressed= event.key;
 
+    if(playerPressed=== 'Escape'){
+        gameOver();
+    }
+
     const currentAlphabetElement=document.getElementById('current-alphabet');
     const currentAlphabet=currentAlphabetElement.innerText;
     const expectedAlphabet=currentAlphabet.toLowerCase();
@@ -92,4 +96,12 @@ function gameOver(){
     setTextElementValueById('game-score',lastScore);
     
     //clear the ;ast selected alphabet
+    const endAlphabet=getElementTextById('current-alphabet');
+    removeBackgroundColorById(endAlphabet);
+}
+
+function returnToHome(){
+    hideElementsById('play');
+    hideElementsById('score');
+    showElementById('home');
 }
