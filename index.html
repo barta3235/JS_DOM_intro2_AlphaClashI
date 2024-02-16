@@ -24,11 +24,11 @@
     <main class="bg-[#010313] min-h-screen   bg-[url(images/background.png)] bg-no-repeat bg-center">
 
         <!-- HOME SECTION -->
-        <section class="home min-h-screen text-white flex border justify-center items-center hidden">
+        <section class="home min-h-screen text-white flex border justify-center items-center">
              <div class="flex flex-col items-center">
-                <h1 class="text-[170px] font-anton uppercase font-normal">ALPHABET CLASH</h1>
-                <p class="text-2xl font-medium mb-14">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-                <button class="font-poppins font-semibold text-2xl py-[22px] px-[32px] bg-white text-[#010313] rounded-lg">Play Now</button>
+                <h1 class="text-[5rem] md:text-[170px] lg:text-[170px] font-anton uppercase font-normal text-center">ALPHABET CLASH</h1>
+                <p class="text-4xl text-center md:text-2xl lg:text-2xl  font-medium mb-14">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+                <button onclick="play()" class="font-poppins font-semibold text-2xl py-[22px] px-[32px] bg-white text-[#010313] rounded-lg">Play Now</button>
              </div>
         </section>
         <!-- HOME SECTION ENDS -->
@@ -133,8 +133,8 @@
     
         
     
-        <section class="score flex justify-center min-h-screen items-center">
-            <div class="px-12 py-11 rounded-2xl border-[#FFFFFF33] text-center bg-[#FFFFFF50] ">
+        <section class="score flex justify-center min-h-screen items-center hidden">
+            <div class="md:px-12 lg:px-12 py-11 rounded-2xl border-[#FFFFFF33] text-center bg-[#FFFFFF50] ">
                 <h1 class="text-[64px] flex items-center gap-4 mb-4">
                     <span class="font-extrabold text-white">Score: </span>
                     <span class="text-white"> 14</span>
@@ -146,6 +146,8 @@
     </main>
 
 
+<script src="scripts/alpha-clash.js">
 
+</script>
 </body>
 </html>
