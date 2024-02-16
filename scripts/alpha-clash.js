@@ -10,6 +10,40 @@
 //     //show the play ground
 // }
 
+function handleKeyboardKeyUpEvent(event){
+    const playerPressed= event.key;
+
+    const currentAlphabetElement=document.getElementById('current-alphabet');
+    const currentAlphabet=currentAlphabetElement.innerText;
+    const expectedAlphabet=currentAlphabet.toLowerCase();
+
+    console.log(playerPressed,expectedAlphabet);
+
+    if(playerPressed === expectedAlphabet){
+        console.log('You won a point');
+        
+        //update score
+        const currentScoreElement=document.getElementById('current-score');
+        const currentScoreText=currentScoreElement.innerText;
+        const currentScore= parseInt(currentScoreText);
+
+        const newScore= currentScore+1;
+        currentScoreElement.innerText=newScore;
+
+        // start new round
+        removeBackgroundColorById(expectedAlphabet);
+        continueGame();
+    }else{
+        console.log('You lost a life');
+
+        // update life
+        
+    }
+}
+
+document.addEventListener('keyup',handleKeyboardKeyUpEvent);
+
+
 
 function continueGame(){
     // step -1 : generate a random alphabet
@@ -18,7 +52,6 @@ function continueGame(){
     // show the alphabet on the UI
     const currentAlphabetElement=document.getElementById('current-alphabet');
     currentAlphabetElement.innerText=letter;
-    console.log(letter);
     setBackgroundColorById(letter);
 }
 
@@ -27,3 +60,4 @@ function play(){
     showElementById('play');
     continueGame();
 }
+
